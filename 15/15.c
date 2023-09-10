@@ -9,12 +9,12 @@ Date: 5th Sept, 2023.
 #include <stdio.h>
 #include <stdlib.h>
 #include<string.h>
-extern char **environ;
+extern char **environ; //array of strings that hold env variables
 
 int main() {
-    char **env = environ;
+    char **env = environ; //a pointer that points same thing that environ points to
 
-    while (*env) {
+    while (*env) { //till current env variable is not null
     if (strncmp(*env, "USER", 4) == 0) printf("%s\n", *env);
         env++;
     }
